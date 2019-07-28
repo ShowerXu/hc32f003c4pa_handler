@@ -26,6 +26,7 @@
 .\output\release\api_sys_timer.o: ..\..\..\driver\inc\bt.h
 .\output\release\api_sys_timer.o: ..\..\..\driver\inc\lpm.h
 .\output\release\api_sys_timer.o: ..\..\..\driver\inc\wdt.h
+.\output\release\api_sys_timer.o: ..\..\..\driver\inc\adc.h
 .\output\release\api_sys_timer.o: ..\..\..\custom\typedef.h
 .\output\release\api_sys_timer.o: ..\..\..\custom\./cfg_board/cfg_board.h
 .\output\release\api_sys_timer.o: ..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h

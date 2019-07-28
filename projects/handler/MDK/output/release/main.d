@@ -26,6 +26,7 @@
 .\output\release\main.o: ..\..\..\driver\inc\bt.h
 .\output\release\main.o: ..\..\..\driver\inc\lpm.h
 .\output\release\main.o: ..\..\..\driver\inc\wdt.h
+.\output\release\main.o: ..\..\..\driver\inc\adc.h
 .\output\release\main.o: ..\..\..\custom\typedef.h
 .\output\release\main.o: ..\..\..\custom\./cfg_board/cfg_board.h
 .\output\release\main.o: ..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h

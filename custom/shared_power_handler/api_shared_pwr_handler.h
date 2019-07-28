@@ -22,9 +22,6 @@ typedef struct{
 	u8 locked;
 }stHandlerPwr;
 typedef struct{
-	u8 pedestalNo[MCU_ID_LEN_MAX];//µ××ù
-    u8 orderNo[32];               //
-    u8 userID[32];
 	stHandlerPwr handler;
 }stSharedDevInfo;
 extern stSharedDevInfo  shared;

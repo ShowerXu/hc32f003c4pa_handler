@@ -26,6 +26,7 @@
 .\output\release\api_shared_pwr_handler.o: ..\..\..\driver\inc\bt.h
 .\output\release\api_shared_pwr_handler.o: ..\..\..\driver\inc\lpm.h
 .\output\release\api_shared_pwr_handler.o: ..\..\..\driver\inc\wdt.h
+.\output\release\api_shared_pwr_handler.o: ..\..\..\driver\inc\adc.h
 .\output\release\api_shared_pwr_handler.o: ..\..\..\custom\typedef.h
 .\output\release\api_shared_pwr_handler.o: ..\..\..\custom\./cfg_board/cfg_board.h
 .\output\release\api_shared_pwr_handler.o: ..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h

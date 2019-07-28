@@ -26,6 +26,7 @@
 .\output\release\bsp_iwdg.o: ..\..\..\driver\inc\bt.h
 .\output\release\bsp_iwdg.o: ..\..\..\driver\inc\lpm.h
 .\output\release\bsp_iwdg.o: ..\..\..\driver\inc\wdt.h
+.\output\release\bsp_iwdg.o: ..\..\..\driver\inc\adc.h
 .\output\release\bsp_iwdg.o: ..\..\..\custom\typedef.h
 .\output\release\bsp_iwdg.o: ..\..\..\custom\./cfg_board/cfg_board.h
 .\output\release\bsp_iwdg.o: ..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h

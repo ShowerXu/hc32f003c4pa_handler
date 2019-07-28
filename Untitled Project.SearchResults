@@ -1,4 +1,4 @@
----- api_comm_handle_pack_prc Matches (3 in 2 files) ----
-Api_uart_protocol.c (custom\api_uart_protocol):static void api_comm_handle_pack_prc(u8 *buf)
-Api_uart_protocol.c (custom\api_uart_protocol):            api_comm_handle_pack_prc(msg->read.get_buf);
-Template.build_log.htm (projects\handler\mdk\output\release):              api_comm_handle_pack_prc(msg->read.get_buf);
+---- Adc_GetScanResult Matches (3 in 3 files) ----
+Adc.c (driver\src):en_result_t Adc_GetScanResult(uint8_t u8Channel, uint16_t* pu16AdcResult)
+Adc.h (driver\inc):en_result_t Adc_GetScanResult(uint8_t u8Channel, uint16_t* pu16AdcResult);
+Bsp_adc.c (custom\bsp_hw_mcu):        Adc_GetScanResult(u8Channel, &u16ScanResult[u8Channel]);

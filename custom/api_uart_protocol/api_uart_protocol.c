@@ -12,7 +12,6 @@
 
 comm_msg_t handler_msg;
 u8 printf_tx_byte;
-
 /*
  * 函数名：Get_ChipID
  * 描述  ：获取芯片ID
@@ -22,10 +21,10 @@ u8 printf_tx_byte;
 void Get_ChipID(void)
 {
     u32 CpuID[3];
-    CpuID[0] = *(volatile u32 *)(0X1ffff7e8);
-    CpuID[1] = *(volatile u32 *)(0X1ffff7ec);
-    CpuID[2] = *(volatile u32 *)(0X1ffff7f0);
-    memcpy(shared.pedestalNo, &CpuID[0], sizeof(shared.pedestalNo));
+    CpuID[0] = *(volatile u32 *)(0X00100E74);
+    CpuID[1] = *(volatile u32 *)(0X00100E78);
+    CpuID[2] = *(volatile u32 *)(0x00100E7C);
+    memcpy(shared.handler.No, &CpuID[0], sizeof(shared.handler.No));
 }
 
 //printf redefined

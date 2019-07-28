@@ -26,7 +26,7 @@ void bsp_clk_init(void)
     stc_clk_systickcfg_t stcCfg;
     
     DDL_ZERO_STRUCT(stcCfg);
-    stcCfg.enClk = ClkRCH;          //hclk/8
+    stcCfg.enClk = ClkXTH;          //hclk/8
     stcCfg.u32LoadVal = 0xF9Fu;     //1ms
     Clk_SysTickConfig(&stcCfg);
 }
