@@ -20,6 +20,7 @@
 #include "bsp_gpio.h"
 #include "bsp_iwdg.h"
 #include "bsp_usart.h"
+#include "bsp_clk.h"
 
 #ifdef __cplusplus
  extern "C" {

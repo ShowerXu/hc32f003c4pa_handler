@@ -14,3 +14,11 @@ git push -u origin master
 1.添加改变文件：git add .
 2.添加修改说明  git commit -m "修改README说明"
 3.上传服务器    git push -u origin master
+
+ 同步服务器软件：git pull
+
+
+20190728://steve
+1.UART1可以发送接收数据。
+2.增加P23输出38K脉冲。
+3.修改AD功能。

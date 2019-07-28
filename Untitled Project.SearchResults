@@ -1,4 +1,2 @@
----- Adc_GetScanResult Matches (3 in 3 files) ----
-Adc.c (driver\src):en_result_t Adc_GetScanResult(uint8_t u8Channel, uint16_t* pu16AdcResult)
-Adc.h (driver\inc):en_result_t Adc_GetScanResult(uint8_t u8Channel, uint16_t* pu16AdcResult);
-Bsp_adc.c (custom\bsp_hw_mcu):        Adc_GetScanResult(u8Channel, &u16ScanResult[u8Channel]);
+---- SysTick_CTRL_ENABLE_Msk Matches (1 in 1 files) ----
+Clk.c (driver\src):    SysTick->CTRL  = SysTick_CTRL_ENABLE_Msk;

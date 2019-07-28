@@ -25,7 +25,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 
-void bsp_usart_init(void);
+void bsp_usart_cfg(void);
 void bsp_usart_send_byte(uint8_t ch);
 uint16_t bsp_usart_receive_char(void);
 void bsp_uart_tx_string(u8 *buf, u8 len);

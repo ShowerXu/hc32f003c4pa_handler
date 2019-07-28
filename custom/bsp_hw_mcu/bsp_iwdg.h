@@ -22,7 +22,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 
-void bsp_iwdg_init(void);
+void bsp_iwdg_cfg(void);
  
 #ifdef __cplusplus
 }

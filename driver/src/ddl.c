@@ -52,7 +52,7 @@
 /******************************************************************************/
 /* Include files                                                              */
 /******************************************************************************/
-#include "ddl.h"
+#include "config.h"
 
 /**
  ******************************************************************************
@@ -146,17 +146,15 @@ void DDL_WAIT_LOOP_HOOK(void)
  *****************************************************************************/
 void Debug_UartInit(void)
 {
-#ifdef __DEBUG
+#ifdef SH_DEBUG
     uint32_t u32Pclk1 =  0;
     volatile uint32_t u32ReloadVal = 0;
-
-    // UART0_TXD/P35, 19200bps
-    M0P_GPIO->P3ADS_f.P35 = 0;
-    M0P_GPIO->P35_SEL_f.SEL = 3;
-    M0P_GPIO->P3DIR_f.P35 = 0;
+    M0P_GPIO->P1ADS_f.P14 = 0;
+    M0P_GPIO->P14_SEL_f.SEL = 3;
+    M0P_GPIO->P1DIR_f.P14 = 0;
 
     u32Pclk1 = Clk_GetPClkFreq();
-    u32ReloadVal = 65536 - u32Pclk1 * 2 / 19200 / 32;
+    u32ReloadVal = 65536 - u32Pclk1 * 2 / 115200 / 32;
 
     M0P_BT0->CR_f.CT = 0;
     M0P_BT0->CR_f.MD = 1;
@@ -167,11 +165,13 @@ void Debug_UartInit(void)
 
     M0P_UART0->SCON_f.DBAUD = 1;
     M0P_UART0->SCON_f.SM01 = 1;
+
 #endif
 }
 
 void Debug_Output(uint8_t u8Data)
 {
+#if 0
     M0P_UART0->SCON_f.REN = 0;
     M0P_UART0->SBUF = u8Data;
 
@@ -180,6 +180,9 @@ void Debug_Output(uint8_t u8Data)
         ;
     }
     M0P_UART0->ICR_f.TICLR = 0;
+#else
+    bsp_usart_send_byte(u8Data);
+#endif
 }
 
 //#ifdef __DEBUG

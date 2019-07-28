@@ -16,7 +16,6 @@
 #include "config.h"
 static  uint8_t   u8Channel;
 static  uint16_t  u16ScanResult[8];
-
 void AdcContIrqCallback(void)
 {    
     //中断标志位判断和清零，已在库函数中处理Adc_IRQHandler();
@@ -56,7 +55,7 @@ void AdcLltIrqCallback(void)
   * 参数: 无
   * 返回: 无
   */
-void bsp_adc_init(void)
+void bsp_adc_cfg(void)
 {
     stc_adc_cfg_t             stcAdcCfg;
     stc_adc_scan_cfg_t        stcAdcScanCfg;
@@ -80,12 +79,9 @@ void bsp_adc_init(void)
         return;
     } 
 
-    Gpio_SetAnalog(2, 4, TRUE);
-    Gpio_SetAnalog(2, 6, TRUE);
-    Gpio_SetAnalog(3, 2, TRUE);
-    Gpio_SetAnalog(3, 3, TRUE);
-    Gpio_SetAnalog(3, 4, TRUE);
-    Gpio_SetAnalog(3, 6, TRUE);
+    Gpio_SetAnalog(2, 4, TRUE);//AIN0
+    Gpio_SetAnalog(2, 6, TRUE);//AIN1
+    Gpio_SetAnalog(3, 4, TRUE);//AIN4
 
     
     Adc_Enable();
@@ -117,12 +113,9 @@ void bsp_adc_init(void)
     
     stcAdcScanCfg.u8AdcScanModeCh = ADC_SCAN_CH0_EN 
                                     | ADC_SCAN_CH1_EN
-                                    | ADC_SCAN_CH2_EN
-                                    | ADC_SCAN_CH3_EN
-                                    | ADC_SCAN_CH4_EN
-                                    | ADC_SCAN_CH6_EN;
+                                    | ADC_SCAN_CH4_EN;
     
-    stcAdcScanCfg.u8AdcSampCnt = 0x5;                   //连续扫描转换次数，保持通道的倍数，6通道 = 0x5+1(1倍)，或者11+1(2倍)……
+    stcAdcScanCfg.u8AdcSampCnt = 0x2;                   //连续扫描转换次数，保持通道的倍数，6通道 = 0x5+1(1倍)，或者11+1(2倍)……
     Adc_ConfigScanMode(&stcAdcCfg, &stcAdcScanCfg);
     Adc_Start();
 }
@@ -133,6 +126,10 @@ void bsp_adc_init(void)
   */
 u16 get_adc_value(u8 ch)
 {
-    return u16ScanResult[ch];
+    u16 val = 0xfff;
+    if(ch == 0)val = u16ScanResult[0];
+    else if(ch == 1)val = u16ScanResult[1];
+    else if(ch == 2)val = u16ScanResult[2];
+    return val;
 }
 /************************************************************************************/

@@ -22,7 +22,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 
-void bsp_clk_init(void);
+void bsp_clk_cfg(void);
  
 #ifdef __cplusplus
 }

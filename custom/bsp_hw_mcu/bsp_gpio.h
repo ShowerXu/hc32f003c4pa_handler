@@ -21,8 +21,7 @@
 #endif 
 
 /* Includes ------------------------------------------------------------------*/
-
-void bsp_general_gpio_cfg(void);
+void bsp_gpio_cfg(void);
 #ifdef __cplusplus
 }
 #endif

@@ -24,7 +24,7 @@ static void WdtCallback(void)
   *       time_out_ms: IWDG 超时时间，单位为毫秒
   * 返回: 无
   */
-void bsp_iwdg_init(void)
+void bsp_iwdg_cfg(void)
 {    
     stc_wdt_config_t  stcWdt_Config;
     stc_lpm_config_t stcLpmCfg;

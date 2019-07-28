@@ -17,7 +17,7 @@ Library Manager: ArmAr.exe V5.06 update 5 (build 528)
 Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
 CPU DLL:         SARMCM3.DLL V5.24.1
 Dialog DLL:      DARMCM1.DLL V1.18.0.0
-Target DLL:      Segger\JL2CM3.dll V2.99.26.0
+Target DLL:      CMSIS_AGDI.dll V1.28.3.0
 Dialog DLL:      TARMCM1.DLL V1.13.0.0
  
 <h2>Project:</h2>
@@ -27,32 +27,7 @@ Project File Date:  07/28/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'template_Release'
-compiling api_shared_pwr_handler.c...
-compiling bsp_adc.c...
-compiling main.c...
-..\source\main.c(96): warning:  #223-D: function "bsp_clk_init" declared implicitly
-      bsp_clk_init();
-..\source\main.c: 1 warning, 0 errors
-compiling bsp_iwdg.c...
-compiling bsp_usart.c...
-compiling bsp_check_dev.c...
-compiling api_uart_protocol.c...
-..\..\..\custom\api_uart_protocol\api_uart_protocol.c(122): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
-              api_comm_handle_pack_prc(msg->read.get_buf);
-..\..\..\custom\api_uart_protocol\api_uart_protocol.c(146): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
-  	bsp_uart_tx_string(w_pack->que_buf, len);
-..\..\..\custom\api_uart_protocol\api_uart_protocol.c(194): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
-          if(api_uart_send_cmd(cmd, len, "CMD OK", "status", 10))
-..\..\..\custom\api_uart_protocol\api_uart_protocol.c(206): warning:  #513-D: a value of type "char *" cannot be assigned to an entity of type "u8 *"
-      cmd_buf = handler_msg.write.que_buf;
-..\..\..\custom\api_uart_protocol\api_uart_protocol.c(219): warning:  #167-D: argument of type "u8 *" is incompatible with parameter of type "char *"
-  	api_send_cmd(cmd_buf, len+4);
-..\..\..\custom\api_uart_protocol\api_uart_protocol.c: 5 warnings, 0 errors
-compiling api_sys_timer.c...
-compiling bsp_clk.c...
-linking...
-Program Size: Code=5940 RO-data=232 RW-data=64 ZI-data=936  
-".\output\release\template.axf" - 0 Error(s), 6 Warning(s).
+".\output\release\template.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -62,15 +37,20 @@ Package Vendor: ARM
                 CMSIS (Cortex Microcontroller Software Interface Standard)
    * Component: CORE Version: 5.1.1
 
+Package Vendor: HDSC
+                https://raw.githubusercontent.com/hdscmcu/pack/master/HDSC.HC32F003.1.0.1.pack
+                HDSC.HC32F003.1.0.1
+                HC32F003 ARM Cortex-M0+ Device Family Pack
+
 <h2>Collection of Component include folders:</h2>
   .\RTE\_template_Release
   D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
-  D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\Device\ARM\ARMCM0plus\Include
+  D:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.1.1
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

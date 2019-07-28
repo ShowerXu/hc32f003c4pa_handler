@@ -93,12 +93,23 @@
 
 int32_t main(void)
 {
-    bsp_clk_init();
-    bsp_usart_init();
-    bsp_iwdg_init();
+    u8 cnt;
+    u16 ad_val;
+    bsp_clk_cfg();
+    bsp_gpio_cfg();
+    bsp_iwdg_cfg();
+    bsp_adc_cfg();
+    bsp_usart_cfg();
     while (1)
 	{
         Wdt_Feed();
+        __disable_irq();
+        ad_val = get_adc_value(cnt);
+        __enable_irq();
+        //sh_printf("[%d][%d]\n",cnt,ad_val);
+        cnt++;
+        if(cnt >2)cnt=0;
+        //delay1ms(1000);
 	}
 }
 

@@ -14,5 +14,38 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "config.h"
+void bsp_gpio_38kout_init(void)
+{
+    M0P_GPIO->P23_SEL_f.SEL = 7;
+}
+void bsp_gpio_cfg(void)
+{
+    bsp_gpio_38kout_init();
+#if 0
+    //GPIO输入
+    //配置P33为输入，P33外接SW2按键
+    Gpio_InitIO(3, 3, GpioDirIn);
+    //如果按键SW2按下，为低电平，则跳出循环继续执行程序
+    while (TRUE == Gpio_GetIO(3,3)); 
+    //GPIO输出
+    //初始化外部GPIO P03为输出、上拉、开漏，P03端口外接LED3
+    Gpio_InitIOExt(0, 3, GpioDirOut, TRUE, FALSE, TRUE, FALSE);
+    
+    //设置GPIO值（翻转）
+    while (1)
+    {
+        //输出高电平，LED3灭
+        Gpio_SetIO(0, 3, TRUE);
+        delay1ms(1000);
+
+        //输出低电平，LED3亮
+        Gpio_SetIO(0, 3, FALSE);
+        delay1ms(1000);
+    }
+#endif
+}
+
+   
+
 
 /*************************************************************************************/
