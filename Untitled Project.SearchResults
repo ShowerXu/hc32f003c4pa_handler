@@ -1,0 +1,4 @@
+---- api_comm_handle_pack_prc Matches (3 in 2 files) ----
+Api_uart_protocol.c (custom\api_uart_protocol):static void api_comm_handle_pack_prc(u8 *buf)
+Api_uart_protocol.c (custom\api_uart_protocol):            api_comm_handle_pack_prc(msg->read.get_buf);
+Template.build_log.htm (projects\handler\mdk\output\release):              api_comm_handle_pack_prc(msg->read.get_buf);
