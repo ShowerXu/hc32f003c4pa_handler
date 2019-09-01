@@ -505,6 +505,16 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\custom\bsp_hw_mcu\bsp_gpio.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_mcu_id.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\custom\bsp_hw_mcu\bsp_mcu_id.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_batterymanage.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\custom\bsp_charge\bsp_batterymanage.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

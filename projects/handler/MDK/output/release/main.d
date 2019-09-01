@@ -39,5 +39,7 @@
 .\output\release\main.o: ..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h
 .\output\release\main.o: ..\..\..\custom\./bsp_hw_mcu/bsp_usart.h
 .\output\release\main.o: ..\..\..\custom\./bsp_hw_mcu/bsp_clk.h
+.\output\release\main.o: ..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h
 .\output\release\main.o: ..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h
 .\output\release\main.o: ..\..\..\custom\./lock/app_lock.h
+.\output\release\main.o: ..\..\..\custom\./bsp_charge/bsp_batterymanage.h

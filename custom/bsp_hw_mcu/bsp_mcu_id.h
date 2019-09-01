@@ -1,29 +1,44 @@
 /**
   ******************************************************************************
-  * 文件:app_board_haier.h
+  * 文件: bsp_mcu_id.h
   * 作者: steve
   * 版本: V1.0.0
-  * 描述: 海尔扫地机相关配置
+  * 描述: 头文件
   ******************************************************************************
   *
-  *                  版权所有 (C), steve
+  *                  版权所有 (C): steve
   *                                
   *
   ******************************************************************************
   */
   
 /* 防止递归包含该头文件 ------------------------------------------------------*/
-#ifndef __CFG_BOARD_PWR_BANK_H__
-#define __CFG_BOARD_PWR_BANK_H__
+#ifndef __BSP_MCU_ID_H__
+#define __BSP_MCU_ID_H__
 
 #ifdef __cplusplus
  extern "C" {
 #endif 
-#define BATT_ADC_CHAN       1
+
+/*定义STM32 MCU的类型*/
+typedef enum {
+    HC32F0,
+    STM32F1,
+    STM32F2,
+    STM32F3,
+    STM32F4,
+    STM32F7,
+    STM32L0,
+    STM32L1,
+    STM32L4,
+    STM32H7,
+}MCUTypedef; 
+extern void Get_ChipID(void);
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __CFG_BOARD_PWR_BANK_H__ */
- 
+
+#endif /* __BSP_MCU_ID_H__ */
+
 /*************************************************************************************/

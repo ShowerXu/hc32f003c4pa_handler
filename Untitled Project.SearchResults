@@ -1,2 +1,3 @@
----- SysTick_CTRL_ENABLE_Msk Matches (1 in 1 files) ----
-Clk.c (driver\src):    SysTick->CTRL  = SysTick_CTRL_ENABLE_Msk;
+---- ClkFreq22_12Mhz Matches (2 in 2 files) ----
+Clk.c (driver\src):        case ClkFreq22_12Mhz:
+Clk.h (driver\inc):    ClkFreq22_12Mhz,            ///< 22.12MHz

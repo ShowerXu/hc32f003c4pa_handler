@@ -17,12 +17,24 @@ extern "C" {
 #define SYNC_HEAD          0xaa55
 typedef enum
 {
-	CMD_READY_RENT = 1,////发起租借请求
-	CMD_READY_RETURN,//发起归还
-	CMD_READY_RETURN_NOTIFY,//手柄归还结果
-	CMD_READY_NOTIFY,//通知租借结果
+	CMD_READY_RENT = 1,////??????
+	CMD_READY_RENT_NOTIFY,//??????
+	CMD_READY_RETURN,//????
+	CMD_READY_RETURN_NOTIFY,//??????
+	CMD_READY_OBTAINIOTINFO,//????Iot????
+	CMD_READY_IOT_CONNECT,//??IOT
 }eUART_CMD;
 
+typedef enum
+{
+	CMD_HD_REPORT_BAT_INFO = 0,////????ID?????
+	CMD_PEDESTAL_GET_BAT_INFO,//????ID?????
+	CMD_HD_ACK=0xff,  //0:ACK 1:NACK
+}eUART_HANDLER_CMD;
+enum{
+    HD_ACK = 0,
+    HD_NACK,
+};
 enum{
     UART_RX_STATE_READY = 0,
     UART_RX_STATE_START,
@@ -31,8 +43,8 @@ enum{
 #define COMM_BUF_LEN              100
 typedef struct
 {
-    char get_buf[COMM_BUF_LEN+1];
-    char que_buf[COMM_BUF_LEN+1];
+    u8 get_buf[COMM_BUF_LEN+1];
+    u8 que_buf[COMM_BUF_LEN+1];
     u16 que_len;
     u16 get_len;
     u16 max_len;
@@ -49,7 +61,7 @@ typedef struct
 extern comm_msg_t handler_msg;
 
 void api_uart_protocol_task(void);
-u8 api_uart_send_cmd (u8 * cmd, u8 len, char * reply1, char * reply2, u32 waittime);
+u8 api_send_cmd_to_handler(u8 adr,u8 *str,u8 len);
 void api_comm_cmd(char *cmd);
 void api_comm_parm_init(void);
 void api_send_handler_sta(u8 lock);

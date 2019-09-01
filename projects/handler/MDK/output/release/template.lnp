@@ -19,6 +19,8 @@
 ".\output\release\api_sys_timer.o"
 ".\output\release\bsp_clk.o"
 ".\output\release\bsp_gpio.o"
+".\output\release\bsp_mcu_id.o"
+".\output\release\bsp_batterymanage.o"
 --strict --scatter ".\output\release\template.sct"
 --keep=*Handler --summary_stderr --info summarysizes --map --load_addr_map_info
 --list ".\output\release\template.map" -o .\output\release\template.axf

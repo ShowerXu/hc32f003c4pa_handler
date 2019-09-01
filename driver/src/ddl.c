@@ -146,7 +146,7 @@ void DDL_WAIT_LOOP_HOOK(void)
  *****************************************************************************/
 void Debug_UartInit(void)
 {
-#ifdef SH_DEBUG
+#if 0//def SH_DEBUG
     uint32_t u32Pclk1 =  0;
     volatile uint32_t u32ReloadVal = 0;
     M0P_GPIO->P1ADS_f.P14 = 0;
@@ -181,7 +181,7 @@ void Debug_Output(uint8_t u8Data)
     }
     M0P_UART0->ICR_f.TICLR = 0;
 #else
-    bsp_usart_send_byte(u8Data);
+    Uart_SendData(UARTCH1,u8Data);
 #endif
 }
 

@@ -21,7 +21,7 @@
 #include "bsp_iwdg.h"
 #include "bsp_usart.h"
 #include "bsp_clk.h"
-
+#include "bsp_mcu_id.h"
 #ifdef __cplusplus
  extern "C" {
 #endif 

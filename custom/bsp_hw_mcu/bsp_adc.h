@@ -23,7 +23,7 @@
 #define ADC_VOLAGE_TO_VALUE_CAL(volage)   ((u16)((volage/3.3)*4096))
 #define ADC_VALUE_TO_VOLAGE_CAL(value)   (value*3.3)/4096
 void bsp_adc_cfg(void);
-u16 get_adc_value(u8 ch);
+u16 bsp_adc_get_val(u8 ch);
 #ifdef __cplusplus
 }
 #endif

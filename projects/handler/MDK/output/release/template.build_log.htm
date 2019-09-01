@@ -22,12 +22,18 @@ Dialog DLL:      TARMCM1.DLL V1.13.0.0
  
 <h2>Project:</h2>
 G:\Working\HC_Working\hc32f003c4pa_handler\projects\handler\MDK\template.uvprojx
-Project File Date:  07/28/2019
+Project File Date:  09/01/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'template_Release'
-".\output\release\template.axf" - 0 Error(s), 0 Warning(s).
+compiling bsp_clk.c...
+..\..\..\custom\bsp_hw_mcu\bsp_clk.c(26): warning:  #550-D: variable "u32Val"  was set but never used
+      u32 u32Val;
+..\..\..\custom\bsp_hw_mcu\bsp_clk.c: 1 warning, 0 errors
+linking...
+Program Size: Code=10228 RO-data=292 RW-data=120 ZI-data=1008  
+".\output\release\template.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 

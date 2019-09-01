@@ -124,12 +124,12 @@ void bsp_adc_cfg(void)
   * 参数: 无
   * 返回: 无
   */
-u16 get_adc_value(u8 ch)
+u16 bsp_adc_get_val(u8 ch)
 {
-    u16 val = 0xfff;
-    if(ch == 0)val = u16ScanResult[0];
-    else if(ch == 1)val = u16ScanResult[1];
-    else if(ch == 2)val = u16ScanResult[2];
-    return val;
+    u16 get_ad;
+    __disable_irq();
+    get_ad = u16ScanResult[ch];
+    __enable_irq();
+    return get_ad;
 }
 /************************************************************************************/

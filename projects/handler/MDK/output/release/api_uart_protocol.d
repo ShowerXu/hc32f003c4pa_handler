@@ -39,5 +39,7 @@
 .\output\release\api_uart_protocol.o: ..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h
 .\output\release\api_uart_protocol.o: ..\..\..\custom\./bsp_hw_mcu/bsp_usart.h
 .\output\release\api_uart_protocol.o: ..\..\..\custom\./bsp_hw_mcu/bsp_clk.h
+.\output\release\api_uart_protocol.o: ..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h
 .\output\release\api_uart_protocol.o: ..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h
 .\output\release\api_uart_protocol.o: ..\..\..\custom\./lock/app_lock.h
+.\output\release\api_uart_protocol.o: ..\..\..\custom\./bsp_charge/bsp_batterymanage.h

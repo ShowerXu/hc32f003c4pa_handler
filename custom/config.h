@@ -36,6 +36,7 @@
 #include "./bsp_hw_mcu/bsp_mcu_include.h"
 #include "./shared_power_handler/api_shared_pwr_handler.h"
 #include "./lock/app_lock.h"
+#include "./bsp_charge/bsp_batterymanage.h"
 /*
 *********************************************************************************************************
 *                                           ∫Í∂®“Â
@@ -49,6 +50,8 @@
 #else
 #define sh_printf(...)
 #endif
+
+#define CHK_BATT_EN        1
 /*
 *********************************************************************************************************
 *                                        APP / BSP
