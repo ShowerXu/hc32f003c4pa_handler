@@ -93,7 +93,7 @@ static void api_comm_handle_pack_prc(u8 dat)
 static void handle_parse_analysis(comm_msg_t *msg)
 {
     //if(msg->dev_en == 0)return;
-    //if(msg->read.end_flag)
+    if(msg->read.end_flag)
     //if(msg->read.get_len != msg->read.que_len)
     {
         u8 get_byte;

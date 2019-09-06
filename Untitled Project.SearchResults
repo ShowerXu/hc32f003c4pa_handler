@@ -1,3 +1,2 @@
----- ClkFreq22_12Mhz Matches (2 in 2 files) ----
-Clk.c (driver\src):        case ClkFreq22_12Mhz:
-Clk.h (driver\inc):    ClkFreq22_12Mhz,            ///< 22.12MHz
+---- SysTick_Config Matches (1 in 1 files) ----
+Bsp_clk.c (custom\bsp_hw_mcu):    SysTick_Config(stcCfg.u32LoadVal);

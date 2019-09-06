@@ -16,7 +16,7 @@ u8 base_10ms_flag;
   * @brief  SYSTICK callback.
   * @retval None
   */
-void HAL_SYSTICK_Callback(void)
+void SysTick_Handler(void)
 {
   /* NOTE : This function Should not be modified, when the callback is needed,
             the HAL_SYSTICK_Callback could be implemented in the user file
@@ -41,6 +41,7 @@ void api_sys_timer_task(void)
     if((systick_10ms % 50) == 0)
     {//500ms
         systick_10ms = 0;
+        //sh_printf(".");
     }
 }
 /*********************************************************

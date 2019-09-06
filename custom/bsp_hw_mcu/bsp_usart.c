@@ -17,15 +17,19 @@
 
 void RxIntCallback(void)
 {
-    //u8 rx = M0P_UART0->SBUF;
-    u8 rx = M0P_UART1->SBUF;
+    u8 rx = M0P_UART0->SBUF;
+    //u8 rx = M0P_UART1->SBUF;
     handler_msg.read.que_buf[handler_msg.read.que_len] = rx;
     handler_msg.read.que_len++;
     if(handler_msg.read.que_len >= handler_msg.read.max_len)
     {
         handler_msg.read.que_len = 0;
     }
-    //handler_msg.read.end_flag = 1;
+    if(rx == 0xff)
+    {
+        handler_msg.read.end_flag = 1;
+    }
+
 }
 void ErrIntCallback(void)
 {
@@ -82,7 +86,7 @@ void bsp_usart0_cfg(void)
     stcConfig.bTouchNvic = TRUE;
 
 
-    stcConfig.enRunMode = UartMode3;//测试项，更改此处来转换4种模式测试
+    stcConfig.enRunMode = UartMode1;//测试项，更改此处来转换4种模式测试
 
 
     stcMulti.enMulti_mode = UartNormal;//测试项，更改此处来转换多主机模式，mode2/3才有多主机模式
@@ -91,7 +95,7 @@ void bsp_usart0_cfg(void)
 
     stcBaud.bDbaud = 0u;//双倍波特率功能
     stcBaud.u32Baud = 115200u;//更新波特率位置
-    stcBaud.u8Mode = UartMode3; //计算波特率需要模式参数
+    stcBaud.u8Mode = UartMode1; //计算波特率需要模式参数
     pclk = Clk_GetPClkFreq();
     timer=Uart_SetBaudRate(UARTCH0,pclk,&stcBaud);
 
@@ -143,7 +147,7 @@ void bsp_usart1_cfg(void)
     stcConfig.bTouchNvic = TRUE;
 
 
-    stcConfig.enRunMode = UartMode3;//测试项，更改此处来转换4种模式测试
+    stcConfig.enRunMode = UartMode1;//测试项，更改此处来转换4种模式测试
 
 
     stcMulti.enMulti_mode = UartNormal;//测试项，更改此处来转换多主机模式，mode2/3才有多主机模式
@@ -151,8 +155,8 @@ void bsp_usart1_cfg(void)
     stcConfig.pstcMultiMode = &stcMulti;
 
     stcBaud.bDbaud = 0u;//双倍波特率功能
-    stcBaud.u32Baud = 19200;//115200u;//更新波特率位置
-    stcBaud.u8Mode = UartMode3; //计算波特率需要模式参数
+    stcBaud.u32Baud = 115200u;//更新波特率位置
+    stcBaud.u8Mode = UartMode1; //计算波特率需要模式参数
     pclk = Clk_GetPClkFreq();
     timer=Uart_SetBaudRate(UARTCH1,pclk,&stcBaud);
 
@@ -164,10 +168,10 @@ void bsp_usart1_cfg(void)
     Bt_Run(TIM1);
 
     Uart_Init(UARTCH1, &stcConfig);
-    Uart_EnableIrq(UARTCH1,UartRxIrq);
-    //Uart_DisableIrq(UARTCH1,UartRxIrq);
-    Uart_ClrStatus(UARTCH1,UartRxFull);
-    Uart_EnableFunc(UARTCH1,UartRx);
+    //Uart_EnableIrq(UARTCH1,UartRxIrq);
+    Uart_DisableIrq(UARTCH1,UartRxIrq);
+    //Uart_ClrStatus(UARTCH1,UartRxFull);
+    //Uart_EnableFunc(UARTCH1,UartRx);
 }
 /**
   * 描述: 初始化串口
@@ -176,7 +180,7 @@ void bsp_usart1_cfg(void)
   */
 void bsp_usart_cfg(void)
 {
-    //bsp_usart0_cfg();
+    bsp_usart0_cfg();
 #ifdef SH_DEBUG
     bsp_usart1_cfg();
 #endif

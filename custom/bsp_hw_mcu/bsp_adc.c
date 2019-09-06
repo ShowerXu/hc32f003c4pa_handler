@@ -67,9 +67,9 @@ void bsp_adc_cfg(void)
     DDL_ZERO_STRUCT(stcAdcIrq);
     DDL_ZERO_STRUCT(stcAdcIrqCalbaks);
     
-    Clk_SwitchTo(ClkRCL);
-    Clk_SetRCHFreq(ClkFreq24Mhz);
-    Clk_SwitchTo(ClkRCH);
+    //Clk_SwitchTo(ClkRCL);
+    //Clk_SetRCHFreq(ClkFreq24Mhz);
+    //Clk_SwitchTo(ClkRCH);
      
     Clk_SetPeripheralGate(ClkPeripheralGpio, TRUE);              //GPIO 外设时钟使能
 
