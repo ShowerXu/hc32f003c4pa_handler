@@ -17,18 +17,8 @@ extern "C" {
 #define SYNC_HEAD          0xaa55
 typedef enum
 {
-	CMD_READY_RENT = 1,////??????
-	CMD_READY_RENT_NOTIFY,//??????
-	CMD_READY_RETURN,//????
-	CMD_READY_RETURN_NOTIFY,//??????
-	CMD_READY_OBTAINIOTINFO,//????Iot????
-	CMD_READY_IOT_CONNECT,//??IOT
-}eUART_CMD;
-
-typedef enum
-{
-	CMD_HD_REPORT_BAT_INFO = 0,////????ID?????
-	CMD_PEDESTAL_GET_BAT_INFO,//????ID?????
+	CMD_HD_REPORT_BAT_INFO = 0,////底座上报ID及电池信息
+	CMD_PEDESTAL_GET_BAT_INFO,//手柄查询ID及电池信息
 	CMD_HD_ACK=0xff,  //0:ACK 1:NACK
 }eUART_HANDLER_CMD;
 enum{
@@ -56,6 +46,7 @@ typedef struct
     comm_pack_t read;
     comm_pack_t write;
     u8 dev_en;
+	u8 bat_report_notify;
 }comm_msg_t;
 
 extern comm_msg_t handler_msg;

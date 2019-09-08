@@ -14,8 +14,9 @@
   
 /* Includes ------------------------------------------------------------------*/
 #include "config.h"
-static  uint8_t   u8Channel;
-static  uint16_t  u16ScanResult[8];
+static uint8_t  u8Channel;
+static uint16_t u16ScanResult[8];
+static uint8_t ad_conv_finish = 0;
 void AdcContIrqCallback(void)
 {    
     //中断标志位判断和清零，已在库函数中处理Adc_IRQHandler();
@@ -24,7 +25,7 @@ void AdcContIrqCallback(void)
     {
         Adc_GetScanResult(u8Channel, &u16ScanResult[u8Channel]);
     }
-    
+    ad_conv_finish = 1;
     // Adc_ClrContIrqState();    
 }
 void AdcRegIrqCallback(void)
@@ -78,10 +79,12 @@ void bsp_adc_cfg(void)
     {
         return;
     } 
-
+    //初始化外部GPIO P03为输出、上拉、开漏，
+    Gpio_InitIOExt(2, 4, GpioDirIn, TRUE, FALSE, TRUE, FALSE);
+    Gpio_InitIOExt(2, 6, GpioDirIn, TRUE, FALSE, TRUE, FALSE);
     Gpio_SetAnalog(2, 4, TRUE);//AIN0
     Gpio_SetAnalog(2, 6, TRUE);//AIN1
-    Gpio_SetAnalog(3, 4, TRUE);//AIN4
+    //Gpio_SetAnalog(3, 4, TRUE);//AIN4
 
     
     Adc_Enable();
@@ -92,9 +95,11 @@ void bsp_adc_cfg(void)
     stcAdcCfg.enAdcOpMode = AdcScanMode;               //扫描采样模式
     stcAdcCfg.enAdcClkSel = AdcClkSysTDiv1;            //PCLK
     stcAdcCfg.enAdcSampTimeSel = AdcSampTime8Clk;      //8个采样时钟
-    //stcAdcCfg.enAdcRefVolSel = RefVolSelInBgr2p5;    //参考电压:内部2.5V(avdd>3V,SPS<=200kHz)
-    stcAdcCfg.enAdcRefVolSel = RefVolSelAVDD;          //参考电压:AVDD
-    stcAdcCfg.bAdcInBufEn = FALSE;                     //电压跟随器如果使能，SPS采样速率 <=200K
+    stcAdcCfg.enAdcRefVolSel = RefVolSelInBgr2p5;    //参考电压:内部2.5V(avdd>3V,SPS<=200kHz)
+    //stcAdcCfg.enAdcRefVolSel = RefVolSelAVDD;          //参考电压:AVDD
+    //stcAdcCfg.bAdcInBufEn = FALSE;                     //电压跟随器如果使能，SPS采样速率 <=200K
+    stcAdcCfg.bAdcInBufEn = TRUE;                     //电压跟随器如果使能，SPS采样速率 <=200K
+
     stcAdcCfg.enAdcTrig0Sel = AdcTrigDisable;          //ADC转换自动触发设置
     stcAdcCfg.enAdcTrig1Sel = AdcTrigDisable;
     Adc_Init(&stcAdcCfg);    
@@ -112,10 +117,10 @@ void bsp_adc_cfg(void)
     Adc_CmpCfg(&stcAdcIrq);                              //结果比较中断使能/禁止配置
     
     stcAdcScanCfg.u8AdcScanModeCh = ADC_SCAN_CH0_EN 
-                                    | ADC_SCAN_CH1_EN
-                                    | ADC_SCAN_CH4_EN;
+                                    | ADC_SCAN_CH1_EN;
+                                    //| ADC_SCAN_CH4_EN;
     
-    stcAdcScanCfg.u8AdcSampCnt = 0x2;                   //连续扫描转换次数，保持通道的倍数，6通道 = 0x5+1(1倍)，或者11+1(2倍)……
+    stcAdcScanCfg.u8AdcSampCnt = 0x1;                   //连续扫描转换次数，保持通道的倍数，6通道 = 0x5+1(1倍)，或者11+1(2倍)……
     Adc_ConfigScanMode(&stcAdcCfg, &stcAdcScanCfg);
     Adc_Start();
 }
@@ -127,6 +132,11 @@ void bsp_adc_cfg(void)
 u16 bsp_adc_get_val(u8 ch)
 {
     u16 get_ad;
+    if(ad_conv_finish)
+    {
+        ad_conv_finish = 0;
+        Adc_Start();
+    }
     __disable_irq();
     get_ad = u16ScanResult[ch];
     __enable_irq();

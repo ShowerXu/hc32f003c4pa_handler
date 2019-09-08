@@ -9,6 +9,14 @@
 //===========================================================================================================================
 #include "config.h"
 stSharedDevInfo  shared;
+void api_shared_hand_msg_task(void)
+{
+    if(handler_msg.bat_report_notify)
+    {
+        handler_msg.bat_report_notify = 0;
+        api_send_handler_sta(1);
+    }
+}
 /*********************************************************
                 File End
 *********************************************************/

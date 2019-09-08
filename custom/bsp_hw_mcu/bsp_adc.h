@@ -20,8 +20,8 @@
  extern "C" {
 #endif 
 
-#define ADC_VOLAGE_TO_VALUE_CAL(volage)   ((u16)((volage/3.3)*4096))
-#define ADC_VALUE_TO_VOLAGE_CAL(value)   (value*3.3)/4096
+#define ADC_VOLAGE_TO_VALUE_CAL(volage)   ((u16)((volage/MCU_AD_REF_V)*4096))
+#define ADC_VALUE_TO_VOLAGE_CAL(value)   (value*MCU_AD_REF_V)/4096
 void bsp_adc_cfg(void);
 u16 bsp_adc_get_val(u8 ch);
 #ifdef __cplusplus

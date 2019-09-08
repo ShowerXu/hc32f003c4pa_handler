@@ -28,12 +28,15 @@ void SysTick_Handler(void)
        base_10ms_cnt = 0;
        base_10ms_flag = 1;
    }
+   if(handler_msg.write.time_out)handler_msg.write.time_out--;
 }
 void api_sys_timer_task(void)
 {
     static u16 systick_10ms = 0;
+    
     if(base_10ms_flag == 0)return;
     base_10ms_flag = 0;
+    systick_10ms++;
     if((systick_10ms % 5) == 0)
     {//50ms
         bsp_bat_manage_task();
@@ -41,7 +44,6 @@ void api_sys_timer_task(void)
     if((systick_10ms % 50) == 0)
     {//500ms
         systick_10ms = 0;
-        //sh_printf(".");
     }
 }
 /*********************************************************

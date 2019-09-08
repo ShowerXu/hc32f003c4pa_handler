@@ -104,6 +104,7 @@ int32_t main(void)
         Wdt_Feed();
         api_uart_protocol_task();
         api_sys_timer_task();
+        api_shared_hand_msg_task();
 	}
 }
 

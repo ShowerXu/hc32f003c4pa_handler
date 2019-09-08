@@ -68,9 +68,10 @@ void bsp_usart0_cfg(void)
     DDL_ZERO_STRUCT(stcBaud);
     DDL_ZERO_STRUCT(stcBtConfig);
     //p14 uart0-tx  p15 uart0-rx
-    Gpio_InitIOExt(1,4,GpioDirOut,TRUE,FALSE,FALSE,FALSE);
-    Gpio_InitIOExt(1,5,GpioDirOut,TRUE,FALSE,FALSE,FALSE);
-    
+    Gpio_InitIOExt(1,4,GpioDirOut,TRUE,FALSE,TRUE,FALSE);
+    Gpio_InitIOExt(1,5,GpioDirOut,TRUE,FALSE,TRUE,FALSE);
+    //Gpio_InitIOExt(1,4,GpioDirOut,TRUE,FALSE,FALSE,FALSE);
+    //Gpio_InitIOExt(1,5,GpioDirOut,TRUE,FALSE,FALSE,FALSE);
     //通道端口配置
     Gpio_SetFunc_UART0TX_P14();
     Gpio_SetFunc_UART0RX_P15();
@@ -94,7 +95,7 @@ void bsp_usart0_cfg(void)
     stcConfig.pstcMultiMode = &stcMulti;
 
     stcBaud.bDbaud = 0u;//双倍波特率功能
-    stcBaud.u32Baud = 115200u;//更新波特率位置
+    stcBaud.u32Baud = MCU_UART_BAUD;//更新波特率位置
     stcBaud.u8Mode = UartMode1; //计算波特率需要模式参数
     pclk = Clk_GetPClkFreq();
     timer=Uart_SetBaudRate(UARTCH0,pclk,&stcBaud);
@@ -155,7 +156,7 @@ void bsp_usart1_cfg(void)
     stcConfig.pstcMultiMode = &stcMulti;
 
     stcBaud.bDbaud = 0u;//双倍波特率功能
-    stcBaud.u32Baud = 115200u;//更新波特率位置
+    stcBaud.u32Baud = MCU_UART_BAUD;//更新波特率位置  //4m
     stcBaud.u8Mode = UartMode1; //计算波特率需要模式参数
     pclk = Clk_GetPClkFreq();
     timer=Uart_SetBaudRate(UARTCH1,pclk,&stcBaud);

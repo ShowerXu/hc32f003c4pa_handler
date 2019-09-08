@@ -157,7 +157,7 @@
           <Type>0</Type>
           <LineNumber>352</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>6196</Address>
+          <Address>7032</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -180,6 +180,31 @@
           <WinNumber>1</WinNumber>
           <ItemText>u32Val,0x0A</ItemText>
         </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>SystemCoreClock,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>u16ScanResult</ItemText>
+        </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Bat</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>SystemCoreClock,0x0A</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>handler_msg</ItemText>
+        </Ww>
       </WatchWindow1>
       <Tracepoint>
         <THDelay>0</THDelay>
@@ -187,7 +212,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>0</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -223,16 +248,6 @@
       <pszMrulep></pszMrulep>
       <pSingCmdsp></pSingCmdsp>
       <pMultCmdsp></pMultCmdsp>
-      <SystemViewers>
-        <Entry>
-          <Name>System Viewer\CLOCK</Name>
-          <WinId>35905</WinId>
-        </Entry>
-        <Entry>
-          <Name>System Viewer\UART1</Name>
-          <WinId>35904</WinId>
-        </Entry>
-      </SystemViewers>
       <DebugDescription>
         <Enable>1</Enable>
         <EnableLog>0</EnableLog>
@@ -276,7 +291,7 @@
 
   <Group>
     <GroupName>source</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -296,7 +311,7 @@
 
   <Group>
     <GroupName>driver</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

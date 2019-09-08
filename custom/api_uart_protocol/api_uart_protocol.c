@@ -18,19 +18,27 @@ void api_comm_parm_init(void)
     memset((char *)&handler_msg, 0, sizeof(comm_msg_t));
     handler_msg.write.max_len = COMM_BUF_LEN;
     handler_msg.read.max_len = COMM_BUF_LEN;
+    handler_msg.dev_en = 1;
     Get_ChipID();
 }
 
 void uart_protocol_process(u8 *buf, u8 len)
-{
-    if(buf[0] == 0x01)
+{//aa 55 10 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 11
+    if(buf[0] == CMD_PEDESTAL_GET_BAT_INFO)
     {//aa 55 10 01 ID1 ... ID12 电量 上锁情况 checksum
-        memcpy(shared.handler.No, &buf[1], sizeof(stHandlerPwr));
-        if(shared.handler.status == 2)
+        handler_msg.read.end_flag = 1;
+        handler_msg.bat_report_notify = 1;
+    }else if(buf[0] == CMD_HD_ACK){
+        if(buf[1] == HD_ACK)
         {
-            
+            handler_msg.read.end_flag = 1;
+        }else{
+            handler_msg.read.end_flag = 0xff;
         }
+        return;
     }
+    
+    api_send_cmd_to_handler_ack(CMD_HD_ACK, HD_ACK);
 }
 static void api_comm_handle_pack_prc(u8 dat)
 {
@@ -77,7 +85,7 @@ static void api_comm_handle_pack_prc(u8 dat)
 			{
 				uart_protocol_process(get_buf, data_len-1);
 				step = 0;
-				api_send_cmd_to_handler_ack(CMD_HD_ACK, HD_ACK);
+				
 				sh_printf("HD ok\r\n");
 			}else{
 				sh_printf("HD err\r\n");
@@ -93,7 +101,7 @@ static void api_comm_handle_pack_prc(u8 dat)
 static void handle_parse_analysis(comm_msg_t *msg)
 {
     //if(msg->dev_en == 0)return;
-    if(msg->read.end_flag)
+    //if(msg->read.end_flag)
     //if(msg->read.get_len != msg->read.que_len)
     {
         u8 get_byte;
@@ -208,12 +216,13 @@ u8 api_send_cmd_to_handler(u8 adr,u8 *str,u8 len)
 	return (api_handler_send_cmd((char *)cmd_buf, len+5));
 }
 
-void api_send_handler_sta(u8 lock)
-{//发起归还
+void api_send_handler_sta(u8 sta)
+{
     u8 buf[128];
-    shared.handler.locked = lock;
-    memcpy(buf, &shared.handler, sizeof(shared.handler));
-    api_send_cmd_to_handler(CMD_READY_RETURN, buf, sizeof(shared.handler));
+    shared.handler.status = sta;
+    shared.handler.bat_level = Bat.PCT;
+    memcpy(buf, &shared.handler, sizeof(shared.handler)-1);
+    api_send_cmd_to_handler(0, buf, sizeof(shared.handler)-1);
 }
 
 /*********************************************************

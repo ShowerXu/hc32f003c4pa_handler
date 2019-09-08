@@ -52,6 +52,10 @@
 #endif
 
 #define CHK_BATT_EN        1
+#define MCU_OUT_38K_PWM_EN 0
+#define MCU_CLK_SEL        ClkFreq4Mhz 
+#define MCU_UART_BAUD      9600 //4MHZ MAX 9600
+#define MCU_AD_REF_V       2.5
 /*
 *********************************************************************************************************
 *                                        APP / BSP

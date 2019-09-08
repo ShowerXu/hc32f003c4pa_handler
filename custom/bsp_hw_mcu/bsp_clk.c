@@ -23,20 +23,19 @@
   */
 void bsp_clk_cfg(void)
 {    
-    u32 u32Val;
+	u32 u32Val;
     stc_clk_systickcfg_t stcCfg;
-    #if 1
     //RCH 24MHz
     Clk_SwitchTo(ClkRCL);
-    Clk_SetRCHFreq(ClkFreq22_12Mhz);
+    Clk_SetRCHFreq(MCU_CLK_SEL);
     Clk_SwitchTo(ClkRCH);
     u32Val = Clk_GetHClkFreq();
-    #endif
     DDL_ZERO_STRUCT(stcCfg);
     stcCfg.enClk = ClkRCH;          //hclk/8
-    stcCfg.u32LoadVal = 0xF9Fu;     //1ms
+    stcCfg.u32LoadVal = (SystemCoreClock/1000);     //1ms
     Clk_SysTickConfig(&stcCfg);
     SysTick_Config(stcCfg.u32LoadVal);
+
 }
 
 /*************************************************************************************/

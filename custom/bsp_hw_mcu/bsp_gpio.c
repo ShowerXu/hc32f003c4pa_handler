@@ -20,29 +20,17 @@ void bsp_gpio_38kout_init(void)
 }
 void bsp_gpio_cfg(void)
 {
+#if MCU_OUT_38K_PWM_EN
     bsp_gpio_38kout_init();
-#if 0
-    //GPIO输入
-    //配置P33为输入，P33外接SW2按键
-    Gpio_InitIO(3, 3, GpioDirIn);
-    //如果按键SW2按下，为低电平，则跳出循环继续执行程序
-    while (TRUE == Gpio_GetIO(3,3)); 
-    //GPIO输出
-    //初始化外部GPIO P03为输出、上拉、开漏，P03端口外接LED3
-    Gpio_InitIOExt(0, 3, GpioDirOut, TRUE, FALSE, TRUE, FALSE);
-    
-    //设置GPIO值（翻转）
-    while (1)
-    {
-        //输出高电平，LED3灭
-        Gpio_SetIO(0, 3, TRUE);
-        delay1ms(1000);
-
-        //输出低电平，LED3亮
-        Gpio_SetIO(0, 3, FALSE);
-        delay1ms(1000);
-    }
 #endif
+    //GPIO输出
+    //初始化外部GPIO P03为输出、上拉、推挽输出，P03端口充电控制
+    Gpio_InitIOExt(0, 3, GpioDirOut, TRUE, FALSE, FALSE, FALSE);
+    //初始化外部GPIO P25为输出、上拉、推挽输出，P23端口充电IC的KEY控制
+    Gpio_InitIOExt(2, 5, GpioDirOut, TRUE, FALSE, FALSE, FALSE);
+    batt_charging_ctl(TRUE);
+    batt_discharge_ctl(FALSE);
+    //Gpio_InitIOExt(2, 4, GpioDirOut, TRUE, FALSE, FALSE, FALSE);
 }
 
    

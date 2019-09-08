@@ -40,12 +40,12 @@ void GetSTM32MCUID(uint32_t *id,MCUTypedef type)
  * 函数名：Get_ChipID
  * 描述  ：获取芯片ID
  * 输入  ：无
- * 输出  ：无
+ * 输出  ：无  ffff0d5214130000007171b9
  */
 void Get_ChipID(void)
 {
     u32 CpuID[3];
-	  u8 i;
+	u8 i;
     GetSTM32MCUID(CpuID, HC32F0);
     memcpy(shared.handler.No, &CpuID[0], sizeof(shared.handler.No));
     for(i=0; i< 3; i++)

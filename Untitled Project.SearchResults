@@ -1,2 +1,4 @@
----- SysTick_Config Matches (1 in 1 files) ----
-Bsp_clk.c (custom\bsp_hw_mcu):    SysTick_Config(stcCfg.u32LoadVal);
+---- handler_msg.bat_report_notify Matches (3 in 2 files) ----
+Api_shared_pwr_handler.c (custom\shared_power_handler):    if(handler_msg.bat_report_notify)
+Api_shared_pwr_handler.c (custom\shared_power_handler):        handler_msg.bat_report_notify = 0;
+Api_uart_protocol.c (custom\api_uart_protocol):        handler_msg.bat_report_notify = 1;

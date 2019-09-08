@@ -44,29 +44,51 @@ void bsp_bat_manage_task(void)
             bat_conv_value += Bat.ADBuffer[i];
             //sh_printf("%d,",Bat.ADBuffer[i]);
         }
+        if(bsp_bat_stable_chk() == 0)
+        {
+            batt_printf("batt err\n");
+            return;
+        }
         //batt_printf(", tol :%d\r\n",bat_conv_value);
         bat_ave_value = bat_conv_value/BAT_SAMPLE_LEN;
-        //batt_printf("BATT AD:%d,%d\r\n",bat_ave_value,BAT_LOW_V);
-        if((bat_ave_value < BAT_LOW_V))
+        
+        Bat.bat_level = VBAT_AD_CALC_VAL(bat_ave_value);
+        if(abs(Bat.bat_level - Bat.bak_bat_level) > 50)
+        {
+            Bat.bak_bat_level = Bat.bat_level;
+            batt_printf("batt err2\n");
+            return;
+        }
+        Bat.bak_bat_level = Bat.bat_level;
+        if(Bat.bat_level < LPWR_OFF_VBAT_VAL)Bat.bat_level = LPWR_OFF_VBAT_VAL;
+        if(Bat.bat_level > BAT_VOL_FULL_VAL)Bat.bat_level = BAT_VOL_FULL_VAL;
+        Bat.PCT = (u8)((Bat.bat_level - LPWR_OFF_VBAT_VAL)*100/(BAT_VOL_FULL_VAL-LPWR_OFF_VBAT_VAL));
+        //batt_printf("BATT AD:%d,%d\r\n",Bat.bat_level,Bat.PCT);
+        if(Bat.WorkState == BAT_IDLE)
+        {
+            Bat.WorkState = BAT_NORMAL;
+            api_send_handler_sta(2);////发起归还
+        }
+        if((Bat.bat_level <= LPWR_OFF_VBAT_VAL))
         {
             //电池电压超过界限，需要关闭电源保护电池
             Bat.ShutTimer = BAT_SHUT_TIMER;
             if(Bat.WorkState != BAT_ERR)
             {
-                if(bsp_bat_stable_chk() != 0)
+                //if(bsp_bat_stable_chk() != 0)
                 {
                     Bat.WorkState = BAT_ERR;
-                    BattErrProcess(bat_ave_value);
+                    BattErrProcess(Bat.bat_level);
                 }
             }
-        }else if((bat_ave_value > BAT_LOW_V))
+        }else
         {
             //电池正常工作
             if(Bat.WorkState != BAT_NORMAL)
             {
-                if((bat_ave_value > BAT_INSERT_V))
+                if((Bat.bat_level > LOWBAT_VOL_RECOVER_VAL))
                 {
-                    if(bsp_bat_stable_chk() != 0)
+                    
                     {
                         if(Bat.ShutTimer)
                         {
@@ -91,11 +113,20 @@ void bsp_bat_manage_task(void)
 void BattErrProcess(u16 BatVal)
 {
     batt_printf("BattErrProcess:%d\r\n",BatVal);
+    batt_discharge_ctl(FALSE);
 }
 
 void BattNormalProcess(void)
 {
 	batt_printf("BattNormalProcess\r\n");
+}
+void batt_charging_ctl(boolean_t onf)
+{//充电
+    Gpio_SetIO(0, 3, onf);
+}
+void batt_discharge_ctl(boolean_t onf)
+{//放电
+    Gpio_SetIO(2, 5, onf);
 }
 #endif
 /*********************************************************

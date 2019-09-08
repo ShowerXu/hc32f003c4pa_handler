@@ -25,6 +25,7 @@ typedef struct{
 	stHandlerPwr handler;
 }stSharedDevInfo;
 extern stSharedDevInfo  shared;
+void api_shared_hand_msg_task(void);
 #ifdef __cplusplus
 }
 #endif
