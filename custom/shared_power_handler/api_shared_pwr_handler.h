@@ -13,7 +13,12 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
+enum{
+	E_HAND_IDLE = 0,
+	E_HAND_INIT_INFO,        //第一次查询信息 
+	E_HAND_RETRUN_INFO,      //归还查询信息 
+	E_HAND_GET_INFO = 0xff,  //底座查询信息
+};
 #define MCU_ID_LEN_MAX                    12
 typedef struct{
 	u8 No[MCU_ID_LEN_MAX];

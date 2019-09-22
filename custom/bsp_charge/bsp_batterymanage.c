@@ -63,11 +63,12 @@ void bsp_bat_manage_task(void)
         if(Bat.bat_level < LPWR_OFF_VBAT_VAL)Bat.bat_level = LPWR_OFF_VBAT_VAL;
         if(Bat.bat_level > BAT_VOL_FULL_VAL)Bat.bat_level = BAT_VOL_FULL_VAL;
         Bat.PCT = (u8)((Bat.bat_level - LPWR_OFF_VBAT_VAL)*100/(BAT_VOL_FULL_VAL-LPWR_OFF_VBAT_VAL));
+        if(Bat.PCT > 100)Bat.PCT=100;
         //batt_printf("BATT AD:%d,%d\r\n",Bat.bat_level,Bat.PCT);
         if(Bat.WorkState == BAT_IDLE)
         {
             Bat.WorkState = BAT_NORMAL;
-            api_send_handler_sta(2);////发起归还
+            api_send_handler_sta(E_HAND_INIT_INFO);////发起归还
         }
         if((Bat.bat_level <= LPWR_OFF_VBAT_VAL))
         {

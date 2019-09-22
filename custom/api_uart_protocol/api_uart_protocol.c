@@ -11,6 +11,7 @@
 #include "config.h"
 
 comm_msg_t handler_msg;
+u8 pedestalNo[MCU_ID_LEN_MAX];
 static void api_send_cmd_to_handler_ack(u8 adr, u8 ack);
 //printf redefined
 void api_comm_parm_init(void)
@@ -24,10 +25,39 @@ void api_comm_parm_init(void)
 
 void uart_protocol_process(u8 *buf, u8 len)
 {//aa 55 10 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 11
+    sh_printf("uart_protocol_process:%d\n",buf[0]);
     if(buf[0] == CMD_PEDESTAL_GET_BAT_INFO)
     {//aa 55 10 01 ID1 ... ID12 电量 上锁情况 checksum
+        sh_printf("GET_BAT_INFO:%d\n",buf[1]);
+        if(buf[1] == E_GET_BAT_INFO)
+        {
+            handler_msg.bat_report_notify = E_HAND_GET_INFO;
+            batt_discharge_ctl(TRUE);
+        }else if(buf[1] == E_BAT_RETURN_OK)
+        {
+            batt_discharge_ctl(FALSE);
+        }else if(buf[1] == E_BAT_RENT_OK)
+        {
+            batt_discharge_ctl(TRUE);
+        }
         handler_msg.read.end_flag = 1;
-        handler_msg.bat_report_notify = 1;
+    }else if(buf[0] == CMD_RETURN_GET_BAT_INFO)
+    {//aa 55 10 01 ID1 ... ID12 电量 上锁情况 checksum
+        handler_msg.read.end_flag = 1;
+        handler_msg.bat_report_notify = E_HAND_RETRUN_INFO;
+    }else if(buf[0] == CMD_GET_PEDESTAL_ID)
+    {
+        u8 i = 0;
+        for(; i< 12; i++)
+        {
+            pedestalNo[i] = buf[1+i];
+        }
+        handler_msg.read.end_flag = 1;
+    }else if(buf[0] == CMD_PC_PEDESTAL_ID)
+    {
+        api_send_pedestal_id();
+        handler_msg.read.end_flag = 1;
+        return;
     }else if(buf[0] == CMD_HD_ACK){
         if(buf[1] == HD_ACK)
         {
@@ -85,7 +115,6 @@ static void api_comm_handle_pack_prc(u8 dat)
 			{
 				uart_protocol_process(get_buf, data_len-1);
 				step = 0;
-				
 				sh_printf("HD ok\r\n");
 			}else{
 				sh_printf("HD err\r\n");
@@ -146,11 +175,14 @@ u8 api_uart_handler_send_cmd (u8 * cmd, u8 len, u8 ack, u32 waittime)
     w_pack->time_out = waittime;
     while(w_pack->time_out)
     {
-        while ((!r_pack->end_flag) && w_pack->time_out);
         r_pack->end_flag = 0;
-        handle_parse_analysis(&handler_msg);
+        while ((!r_pack->end_flag) && w_pack->time_out)
+        {
+            handle_parse_analysis(&handler_msg);
+        }
         //memcpy(r_pack->get_buf, r_pack->que_buf, r_pack->que_len);
         //r_pack->get_buf[r_pack->que_len] = '\0';
+        sh_printf("end_flag:%d\n",r_pack->end_flag);
     	if(r_pack->end_flag == 1)
     	{
     	    return 1;
@@ -169,7 +201,7 @@ u8 api_handler_send_cmd(char *cmd, u8 len)
 
     while(fail--)
     {
-        if(api_uart_handler_send_cmd((u8 *)cmd, len, HD_ACK, 10))
+        if(api_uart_handler_send_cmd((u8 *)cmd, len, HD_ACK, 100))
         {
             sh_printf("HD send success\r\n");
             return 1;
@@ -222,9 +254,15 @@ void api_send_handler_sta(u8 sta)
     shared.handler.status = sta;
     shared.handler.bat_level = Bat.PCT;
     memcpy(buf, &shared.handler, sizeof(shared.handler)-1);
-    api_send_cmd_to_handler(0, buf, sizeof(shared.handler)-1);
+    api_send_cmd_to_handler(CMD_HD_REPORT_BAT_INFO, buf, sizeof(shared.handler)-1);
 }
-
+void api_send_pedestal_id(void)
+{
+    u8 buf[128];
+    memcpy(buf, &shared.handler.No, sizeof(shared.handler.No));
+    memcpy(&buf[sizeof(shared.handler.No)], &pedestalNo, sizeof(pedestalNo));
+    api_send_cmd_to_handler(CMD_GET_PEDESTAL_ID, buf, MCU_ID_LEN_MAX*2);
+}
 /*********************************************************
                 File End
 *********************************************************/

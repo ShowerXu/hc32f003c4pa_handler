@@ -1,4 +1,8 @@
----- handler_msg.bat_report_notify Matches (3 in 2 files) ----
+---- bat_report_notify Matches (8 in 3 files) ----
 Api_shared_pwr_handler.c (custom\shared_power_handler):    if(handler_msg.bat_report_notify)
+Api_shared_pwr_handler.c (custom\shared_power_handler):        sh_printf("bat_report_notify:%d\n",handler_msg.bat_report_notify);
+Api_shared_pwr_handler.c (custom\shared_power_handler):        api_send_handler_sta(handler_msg.bat_report_notify);
 Api_shared_pwr_handler.c (custom\shared_power_handler):        handler_msg.bat_report_notify = 0;
-Api_uart_protocol.c (custom\api_uart_protocol):        handler_msg.bat_report_notify = 1;
+Api_uart_protocol.c (custom\api_uart_protocol):            handler_msg.bat_report_notify = E_HAND_GET_INFO;
+Api_uart_protocol.c (custom\api_uart_protocol):        handler_msg.bat_report_notify = E_HAND_RETRUN_INFO;
+Api_uart_protocol.h (custom\api_uart_protocol):	u8 bat_report_notify;

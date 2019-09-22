@@ -50,7 +50,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -59,7 +59,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\driver\src\ddl.c)(0x5D6BD560)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\ddl.o --omf_browse .\output\release\ddl.crf --depend .\output\release\ddl.d)
@@ -94,7 +94,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -103,7 +103,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\driver\src\interrupts_hc32f003.c)(0x5D3D0711)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\interrupts_hc32f003.o --omf_browse .\output\release\interrupts_hc32f003.crf --depend .\output\release\interrupts_hc32f003.d)
@@ -269,7 +269,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -278,10 +278,10 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
-F (..\..\..\custom\api_uart_protocol\api_uart_protocol.c)(0x5D7515FB)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\api_uart_protocol.o --omf_browse .\output\release\api_uart_protocol.crf --depend .\output\release\api_uart_protocol.d)
+F (..\..\..\custom\api_uart_protocol\api_uart_protocol.c)(0x5D878463)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\api_uart_protocol.o --omf_browse .\output\release\api_uart_protocol.crf --depend .\output\release\api_uart_protocol.d)
 I (..\..\..\custom\config.h)(0x5D75085D)
 I (D:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
@@ -313,7 +313,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -322,10 +322,10 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
-F (..\..\..\custom\shared_power_handler\api_shared_pwr_handler.c)(0x5D751135)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\api_shared_pwr_handler.o --omf_browse .\output\release\api_shared_pwr_handler.crf --depend .\output\release\api_shared_pwr_handler.d)
+F (..\..\..\custom\shared_power_handler\api_shared_pwr_handler.c)(0x5D8782F1)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\api_shared_pwr_handler.o --omf_browse .\output\release\api_shared_pwr_handler.crf --depend .\output\release\api_shared_pwr_handler.d)
 I (..\..\..\custom\config.h)(0x5D75085D)
 I (D:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
@@ -357,7 +357,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -366,7 +366,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\custom\bsp_hw_mcu\bsp_adc.c)(0x5D74D2F5)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\bsp_adc.o --omf_browse .\output\release\bsp_adc.crf --depend .\output\release\bsp_adc.d)
@@ -401,7 +401,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -410,7 +410,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\custom\bsp_hw_mcu\bsp_iwdg.c)(0x5D3D4DE3)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\bsp_iwdg.o --omf_browse .\output\release\bsp_iwdg.crf --depend .\output\release\bsp_iwdg.d)
@@ -445,7 +445,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -454,7 +454,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\custom\bsp_check\bsp_check_dev.c)(0x5D3D1ABB)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\bsp_check_dev.o --omf_browse .\output\release\bsp_check_dev.crf --depend .\output\release\bsp_check_dev.d)
@@ -489,7 +489,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -498,7 +498,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\custom\systick\api_sys_timer.c)(0x5D750CEA)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\api_sys_timer.o --omf_browse .\output\release\api_sys_timer.crf --depend .\output\release\api_sys_timer.d)
@@ -533,7 +533,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -542,7 +542,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\custom\bsp_hw_mcu\bsp_clk.c)(0x5D7505BD)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\bsp_clk.o --omf_browse .\output\release\bsp_clk.crf --depend .\output\release\bsp_clk.d)
@@ -577,7 +577,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -586,7 +586,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\custom\bsp_hw_mcu\bsp_gpio.c)(0x5D74E5DB)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\bsp_gpio.o --omf_browse .\output\release\bsp_gpio.crf --depend .\output\release\bsp_gpio.d)
@@ -621,7 +621,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -630,7 +630,7 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
 F (..\..\..\custom\bsp_hw_mcu\bsp_mcu_id.c)(0x5D74F7ED)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\bsp_mcu_id.o --omf_browse .\output\release\bsp_mcu_id.crf --depend .\output\release\bsp_mcu_id.d)
@@ -665,7 +665,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -674,10 +674,10 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)
-F (..\..\..\custom\bsp_charge\bsp_batterymanage.c)(0x5D751C19)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\bsp_batterymanage.o --omf_browse .\output\release\bsp_batterymanage.crf --depend .\output\release\bsp_batterymanage.d)
+F (..\..\..\custom\bsp_charge\bsp_batterymanage.c)(0x5D87A185)(-c --cpu Cortex-M0+ -g -O0 --apcs=interwork --split_sections -I ..\..\..\mcu\common -I ..\source -I ..\..\..\driver\inc -I ..\..\..\custom-I.\RTE\_template_Release-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-ID:\Keil_v5\ARM\PACK\HDSC\HC32F003\1.0.1\Device\Include-D__UVISION_VERSION="524" -D_RTE_-o .\output\release\bsp_batterymanage.o --omf_browse .\output\release\bsp_batterymanage.crf --depend .\output\release\bsp_batterymanage.d)
 I (..\..\..\custom\config.h)(0x5D75085D)
 I (D:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x588B8344)
@@ -709,7 +709,7 @@ I (..\..\..\custom\typedef.h)(0x5D3D1719)
 I (..\..\..\custom\./cfg_board/cfg_board.h)(0x5D3D0711)
 I (..\..\..\custom\./cfg_board/cfg_board_shared_pwr_bank.h)(0x5D6BDEEB)
 I (..\..\..\custom\./systick/api_sys_timer.h)(0x5D3D0711)
-I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D75107B)
+I (..\..\..\custom\./api_uart_protocol/api_uart_protocol.h)(0x5D876E40)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_include.h)(0x5D6BD94A)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_adc.h)(0x5D74C205)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_exti.h)(0x5D3D0FA3)
@@ -718,6 +718,6 @@ I (..\..\..\custom\./bsp_hw_mcu/bsp_iwdg.h)(0x5D3D4DC1)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_usart.h)(0x5D3D4DDD)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_clk.h)(0x5D3D4DE3)
 I (..\..\..\custom\./bsp_hw_mcu/bsp_mcu_id.h)(0x5D6BDA27)
-I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D751139)
+I (..\..\..\custom\./shared_power_handler/api_shared_pwr_handler.h)(0x5D874786)
 I (..\..\..\custom\./lock/app_lock.h)(0x5D3D0711)
 I (..\..\..\custom\./bsp_charge/bsp_batterymanage.h)(0x5D751BF1)

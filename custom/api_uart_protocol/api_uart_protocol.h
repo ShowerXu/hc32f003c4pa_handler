@@ -19,8 +19,16 @@ typedef enum
 {
 	CMD_HD_REPORT_BAT_INFO = 0,////底座上报ID及电池信息
 	CMD_PEDESTAL_GET_BAT_INFO,//手柄查询ID及电池信息
+	CMD_RETURN_GET_BAT_INFO,//归完手柄查询ID及电池信息
+	CMD_GET_PEDESTAL_ID,    //获取底座ID
+	CMD_PC_PEDESTAL_ID, //PC获取底座ID
 	CMD_HD_ACK=0xff,  //0:ACK 1:NACK
 }eUART_HANDLER_CMD;
+enum{////底座上报ID及电池信息
+	E_GET_BAT_INFO = 0,//取电池信息
+	E_BAT_RETURN_OK,//归还成功
+	E_BAT_RENT_OK,//租借成功
+};
 enum{
     HD_ACK = 0,
     HD_NACK,
@@ -56,6 +64,7 @@ u8 api_send_cmd_to_handler(u8 adr,u8 *str,u8 len);
 void api_comm_cmd(char *cmd);
 void api_comm_parm_init(void);
 void api_send_handler_sta(u8 lock);
+void api_send_pedestal_id(void);
 #ifdef __cplusplus
 }
 #endif
